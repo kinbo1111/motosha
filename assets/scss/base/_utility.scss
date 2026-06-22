@@ -1,0 +1,36 @@
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.container {
+  max-width: 1110px;
+  width: 100%;
+  padding: 0 20px;
+  margin: 0 auto;
+
+  @include md {
+    padding: 0 10px;
+  }
+}
+
+.pc-only {
+  display: block;
+  @include md {
+    display: none;
+  }
+}
+
+.sp-only {
+  display: none;
+  @include md {
+    display: block;
+  }
+}

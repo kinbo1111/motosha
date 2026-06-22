@@ -1,0 +1,51 @@
+.floating-cta {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  z-index: 90;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  width: 60px;
+  height: 240px;
+  padding: 2.4rem 1rem;
+  background-color: $accent-color;
+  border-radius: 2.5rem 0 0 2.5rem;
+  box-shadow: -2px 4px 12px rgba($font_main, 0.2);
+  border: 2px solid $main-color;
+  color: #fff;
+  text-decoration: none;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(100%, -50%);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+
+  &.is-visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(0, -50%);
+  }
+
+  &__main {
+    writing-mode: vertical-rl;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 0.08em;
+    white-space: nowrap;
+  }
+
+  &__sub {
+    writing-mode: vertical-rl;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+  }
+
+  @include md {
+    display: none;
+  }
+}

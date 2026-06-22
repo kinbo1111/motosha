@@ -1,0 +1,45 @@
+@keyframes stagger-pop {
+  0% {
+    opacity: 0;
+    transform: scale(0.75) translateY(1.2rem);
+  }
+
+  55% {
+    opacity: 1;
+    transform: scale(1.06) translateY(-0.2rem);
+  }
+
+  75% {
+    transform: scale(0.98) translateY(0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.stagger-pop {
+  > .stagger-pop__item {
+    opacity: 0;
+  }
+
+  &.is-visible {
+    > .stagger-pop__item {
+      animation: stagger-pop 0.75s ease forwards;
+
+      @for $i from 1 through 12 {
+        &:nth-child(#{$i}) {
+          animation-delay: #{($i - 1) * 0.2}s;
+        }
+      }
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    > .stagger-pop__item {
+      opacity: 1;
+      animation: none;
+    }
+  }
+}

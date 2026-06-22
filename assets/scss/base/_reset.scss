@@ -1,0 +1,107 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  max-width: 1200px;
+  overflow-x: hidden;
+  width: 100%;
+  margin: 0 auto;
+  scroll-behavior: smooth;
+  scroll-padding-top: 10rem;
+  font-size: 0.8333vw;
+  font-size: clamp(6px, 0.8333vw, 10px);
+
+  @include xl {
+    font-size: 0.78125vw;
+  }
+
+  @include lg {
+    font-size: 0.9765vw;
+  }
+
+  @include md {
+    font-size: 1.30208vw;
+    scroll-padding-top: 8rem;
+  }
+
+  @include sm {
+    font-size: 1.7361vw;
+  }
+
+  @include xs {
+    font-size: 10px;
+    scroll-padding-top: 7rem;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: $font-family;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.7;
+  color: $font_main;
+  word-break: break-word;
+
+  @include sm {
+    font-size: 14px;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure {
+  margin: 0;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  padding: 0;
+}
+
+input,
+textarea {
+  font: inherit;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+address {
+  font-style: normal;
+}
