@@ -1,13 +1,14 @@
 // Colors
-$font_main: #2F3E5C;
-$subcolor:#E8C7CE;
-$accent-color: #E07A8A;
-$main-color: #3A4A6B;
-$font_sub: #4A5568;
-$font_accent: #D9AEB7;
-$font_attention: #8A8A8A;
-$base-color: #FAF7F8;
-$add-color: #B0A8A8;
+$brand: #F18700;
+$base: #151619;
+$font_main: $base;
+$white: #fff;
+$line-green: #06C755;
+$cta-yellow: #F5B800;
+$accent-color: $line-green;
+$main-color: $brand;
+$protect-gray: #707070;
+
 // Typography
 $font-family: "Noto Sans JP", sans-serif;
 
