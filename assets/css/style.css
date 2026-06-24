@@ -1864,6 +1864,16 @@ address {
   text-align: left;
   cursor: pointer;
 }
+@media (max-width: 768px) {
+  .faq__question {
+    padding: 2rem 2rem;
+  }
+}
+@media (max-width: 375px) {
+  .faq__question {
+    padding: 2rem 1rem;
+  }
+}
 .faq__q, .faq__a {
   color: white;
   flex-shrink: 0;
@@ -1872,12 +1882,22 @@ address {
   font-weight: 400;
   line-height: 1;
 }
+@media (max-width: 768px) {
+  .faq__q, .faq__a {
+    font-size: 20px;
+  }
+}
 .faq__question-text {
   flex: 1;
   font-size: 18px;
   font-weight: 700;
   line-height: 1.6;
   letter-spacing: 0;
+}
+@media (max-width: 768px) {
+  .faq__question-text {
+    font-size: 16px;
+  }
 }
 .faq__icon {
   display: block;
@@ -1909,6 +1929,16 @@ address {
   width: 100%;
   padding: 2rem 4rem;
 }
+@media (max-width: 768px) {
+  .faq__answer-inner {
+    padding: 2rem 2rem;
+  }
+}
+@media (max-width: 375px) {
+  .faq__answer-inner {
+    padding: 2rem 1rem;
+  }
+}
 .faq__answer-text {
   flex: 1;
   color: #fff;
@@ -1916,6 +1946,11 @@ address {
   font-weight: 500;
   line-height: 1.5;
   letter-spacing: 0;
+}
+@media (max-width: 768px) {
+  .faq__answer-text {
+    font-size: 16px;
+  }
 }
 
 .header {
