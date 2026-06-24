@@ -323,21 +323,31 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('resize', updateFloatingCta);
   }
 
-  const heroContent = document.querySelector('.hero .fade-up');
-  if (heroContent) {
+  const heroContent = document.querySelector('.fv__fade.fade-up');
+  const fvFeatures = document.querySelector('.fv__features.stagger-pop');
+  const fvLabel = document.querySelector('.fv__label.line-reveal');
+
+  const triggerFvAnimations = () => {
     if (prefersReducedMotion) {
-      heroContent.classList.add('is-visible');
-    } else {
-      window.setTimeout(() => heroContent.classList.add('is-visible'), 120);
+      fvLabel?.classList.add('is-visible');
+      heroContent?.classList.add('is-visible');
+      fvFeatures?.classList.add('is-visible');
+      return;
     }
-  }
+
+    window.setTimeout(() => {
+      fvLabel?.classList.add('is-visible');
+    }, 200);
+
+    window.setTimeout(() => {
+      heroContent?.classList.add('is-visible');
+      fvFeatures?.classList.add('is-visible');
+    }, 400);
+  };
+
+  triggerFvAnimations();
 
   initScrollReveal('.heading-line, .highlight-line');
   initScrollReveal('.stagger-pop');
   initScrollReveal('.fade-up, .fade-up--self, .fade-in-left--self, .fade-in-right--self, .line-reveal');
-
-  const fvLabel = document.querySelector('.fv__label.line-reveal');
-  if (fvLabel && !prefersReducedMotion) {
-    window.setTimeout(() => fvLabel.classList.add('is-visible'), 200);
-  }
 });

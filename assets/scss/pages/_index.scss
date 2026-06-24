@@ -329,6 +329,16 @@
     text-align: center;
     letter-spacing: 0;
     font-family: "Noto Sans Javanese", sans-serif;
+
+    .highlight-line {
+      --highlight-width: 7rem;
+      --highlight-height: 0.5rem;
+      --highlight-bottom: 0.1rem;
+      --highlight-left: 50%;
+      --highlight-margin-left: -3.5rem;
+      --highlight-color: #{$brand};
+    }
+
     @include md {
       font-size: 28px;
     }
@@ -1605,7 +1615,7 @@
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 2.4rem;
+    gap: 1.2rem;
     margin: 0;
     padding: 0;
     list-style: none;
@@ -1613,6 +1623,8 @@
 
   &__step {
     position: relative;
+    width: 325px;
+    height: 180px;
   }
 
   &__step-label {
@@ -1648,7 +1660,7 @@
     display: flex;
     align-items: center;
     gap: 1.2rem;
-    padding: 3.5rem 2.3rem;
+    padding: 2.5rem 2.3rem;
     border: 1px solid $white;
     min-height: 180px;
     @include md {

@@ -139,6 +139,16 @@
     letter-spacing: 0;
     text-decoration: none;
     transition: opacity 0.2s ease;
+    animation: dokundokun 1300ms ease infinite;
+
+    &:hover {
+      opacity: 0.9;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      animation: none;
+    }
+
     &-text {
       display: flex;
       align-items: baseline;

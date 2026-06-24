@@ -767,6 +767,14 @@ address {
   letter-spacing: 0;
   font-family: "Noto Sans Javanese", sans-serif;
 }
+.concern__heading .highlight-line {
+  --highlight-width: 7rem;
+  --highlight-height: 0.5rem;
+  --highlight-bottom: 0.1rem;
+  --highlight-left: 50%;
+  --highlight-margin-left: -3.5rem;
+  --highlight-color: #F18700;
+}
 @media (max-width: 768px) {
   .concern__heading {
     font-size: 28px;
@@ -1990,13 +1998,15 @@ address {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 2.4rem;
+  gap: 1.2rem;
   margin: 0;
   padding: 0;
   list-style: none;
 }
 .price__step {
   position: relative;
+  width: 325px;
+  height: 180px;
 }
 .price__step-label {
   position: absolute;
@@ -2033,7 +2043,7 @@ address {
   display: flex;
   align-items: center;
   gap: 1.2rem;
-  padding: 3.5rem 2.3rem;
+  padding: 2.5rem 2.3rem;
   border: 1px solid #fff;
   min-height: 180px;
 }
@@ -2677,6 +2687,15 @@ address {
   letter-spacing: 0;
   text-decoration: none;
   transition: opacity 0.2s ease;
+  animation: dokundokun 1300ms ease infinite;
+}
+.footer__line-btn:hover {
+  opacity: 0.9;
+}
+@media (prefers-reduced-motion: reduce) {
+  .footer__line-btn {
+    animation: none;
+  }
 }
 .footer__line-btn-text {
   display: flex;
