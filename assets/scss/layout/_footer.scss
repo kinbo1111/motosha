@@ -11,6 +11,27 @@
     align-items: center;
     justify-content: flex-end;
     padding: 2rem 0 4.4rem;
+
+    @include lg {
+      justify-content: center;
+      padding: 3rem 0 3.6rem;
+      background-position: 30% center;
+    }
+
+    @include md {
+      align-items: flex-end;
+      padding: 28rem 0 3rem;
+      background-position: center top;
+      background-size: 100% auto;
+    }
+
+    @include sm {
+      padding: 24rem 0 2.6rem;
+    }
+
+    @include xs {
+      padding: 20rem 0 2rem;
+    }
   }
 
   &__contact-inner {
@@ -18,6 +39,16 @@
     z-index: 1;
     max-width: 600px;
     margin: unset;
+
+    &.container {
+      @include lg {
+        max-width: 100%;
+      }
+    }
+
+    @include md {
+      width: 100%;
+    }
   }
 
   &__title {
@@ -27,6 +58,26 @@
     font-weight: 700;
     line-height: 1.2;
     letter-spacing: 0;
+
+    @include lg {
+      font-size: 30px;
+    }
+
+    @include md {
+      margin-bottom: 1.2rem;
+      font-size: 24px;
+      text-align: center;
+    }
+
+    @include sm {
+      font-size: 22px;
+    }
+
+    @include xs {
+      margin-bottom: 1rem;
+      font-size: 20px;
+      line-height: 1.3;
+    }
   }
 
   &__lead {
@@ -36,6 +87,17 @@
     font-weight: 700;
     line-height: 1.6;
     letter-spacing: 0;
+
+    @include md {
+      font-size: 16px;
+      line-height: 1.5;
+      text-align: center;
+    }
+
+    @include xs {
+      margin-bottom: 0.4rem;
+      font-size: 14px;
+    }
   }
 
   &__lead-accent {
@@ -48,13 +110,23 @@
     gap: 2.4rem;
     margin-bottom: 1.8rem;
     flex-wrap: wrap;
+
+    @include md {
+      justify-content: center;
+      gap: 1.6rem;
+      margin-bottom: 1.6rem;
+    }
+
+    @include xs {
+      gap: 1.2rem;
+      margin-bottom: 1.4rem;
+    }
   }
 
   &__line-btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 0.8rem;
     width: 250px;
     height: 57px;
     background-color: #06C755;
@@ -67,12 +139,43 @@
     letter-spacing: 0;
     text-decoration: none;
     transition: opacity 0.2s ease;
+    &-text {
+      display: flex;
+      align-items: baseline;
+      justify-content: center;
+    }
+    @include md {
+      width: 100%;
+      max-width: 100%;
+    }
+
+    @include sm {
+      height: 54px;
+      font-size: 16px;
+      border-radius: 12px;
+    }
+
+    @include xs {
+      height: 50px;
+      border-radius: 10px;
+    }
 
     &:hover {
       opacity: 0.9;
     }
+
     span {
       font-size: 14px;
+
+      @include xs {
+        font-size: 13px;
+      }
+    }
+  }
+
+  &__tel {
+    @include md {
+      text-align: center;
     }
   }
 
@@ -88,6 +191,23 @@
     text-decoration: none;
     transition: opacity 0.2s ease;
 
+    @include lg {
+      font-size: 36px;
+    }
+
+    @include md {
+      font-size: 32px;
+    }
+
+    @include sm {
+      font-size: 28px;
+    }
+
+    @include xs {
+      margin-bottom: 0.2rem;
+      font-size: 24px;
+    }
+
     &:hover {
       opacity: 0.85;
     }
@@ -100,6 +220,10 @@
     font-weight: 400;
     line-height: 1.6;
     letter-spacing: 0;
+
+    @include xs {
+      font-size: 12px;
+    }
   }
 
   &__features {
@@ -110,10 +234,19 @@
     padding: 0;
     list-style: none;
 
+    @include lg {
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
     @include md {
       flex-direction: column;
-      align-items: flex-start;
+      align-items: center;
       gap: 1.6rem;
+    }
+
+    @include xs {
+      gap: 1.2rem;
     }
   }
 
@@ -127,11 +260,24 @@
     line-height: 1.5;
     letter-spacing: 0;
 
+    @include sm {
+      font-size: 14px;
+    }
+
+    @include xs {
+      gap: 0.8rem;
+      font-size: 13px;
+    }
+
     img {
       flex-shrink: 0;
       width: auto;
       height: 30px;
       object-fit: contain;
+
+      @include xs {
+        height: 24px;
+      }
     }
   }
 
@@ -143,6 +289,22 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding-top: 1.4rem;
+    padding-bottom: 1.4rem;
+
+    @include md {
+      flex-direction: column;
+      align-items: center;
+      gap: 0.6rem;
+      padding-top: 1.2rem;
+      padding-bottom: 1.2rem;
+    }
+
+    @include xs {
+      gap: 0.4rem;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+    }
   }
 
   &__company {
@@ -150,11 +312,27 @@
     font-weight: 400;
     color: $base;
     letter-spacing: 0;
+    line-height: 1.5;
+
+    @include xs {
+      font-size: 10px;
+    }
   }
+
   &__brand {
     font-size: 10px;
     font-weight: 400;
     color: $base;
     letter-spacing: 0;
+    white-space: nowrap;
+
+    @include md {
+      align-self: center;
+    }
+
+    @include xs {
+      font-size: 9px;
+      white-space: normal;
+    }
   }
 }
