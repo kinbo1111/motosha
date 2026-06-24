@@ -334,5 +334,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   initScrollReveal('.heading-line, .highlight-line');
   initScrollReveal('.stagger-pop');
-  initScrollReveal('.fade-up, .fade-up--self');
+  initScrollReveal('.fade-up, .fade-up--self, .fade-in-left--self, .fade-in-right--self, .line-reveal');
+
+  const fvLabel = document.querySelector('.fv__label.line-reveal');
+  if (fvLabel && !prefersReducedMotion) {
+    window.setTimeout(() => fvLabel.classList.add('is-visible'), 200);
+  }
 });

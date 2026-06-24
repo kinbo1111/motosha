@@ -51,6 +51,7 @@
       background-color: $brand;
       clip-path: polygon(1% 0%, 100% 0%, 99% 100%, 0% 100%);
       z-index: -1;
+      @include underline-reveal-init;
     }
     @include md {
       font-size: 18px;
@@ -261,11 +262,15 @@
     border-radius: 15px;
     color: $white;
     text-decoration: none;
-    transition: opacity 0.2s ease, transform 0.2s ease;
+    transition: opacity 0.2s ease;
+    animation: dokundokun 1300ms ease infinite;
 
     &:hover {
       opacity: 0.9;
-      transform: translateY(-2px);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      animation: none;
     }
   }
 
@@ -957,6 +962,7 @@
       height: 5px;
       background-color: #F18700;
       clip-path: polygon(1% 0%, 100% 0%, 99% 100%, 0% 100%);
+      @include underline-reveal-init;
     }
     @include md {
       font-size: 20px;
@@ -1051,6 +1057,7 @@
       height: 5px;
       background-color: #F18700;
       clip-path: polygon(1% 0%, 100% 0%, 99% 100%, 0% 100%);
+      @include underline-reveal-init;
     }
   }
 
@@ -1371,6 +1378,7 @@
       height: 5px;
       background-color: #F18700;
       clip-path: polygon(1% 0%, 100% 0%, 99% 100%, 0% 100%);
+      @include underline-reveal-init;
     }
   }
 
@@ -1580,6 +1588,7 @@
       height: 5px;
       background-color: #F18700;
       clip-path: polygon(1% 0%, 100% 0%, 99% 100%, 0% 100%);
+      @include underline-reveal-init;
     }
   }
 
