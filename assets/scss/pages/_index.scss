@@ -250,25 +250,6 @@
     width: 10px;
     height: 16px;
   }
-
-  &--alt {
-    .cta-band__stripe {
-      height: 22rem;
-      background: linear-gradient(90deg, $brand 0%, $cta-yellow 55%, #ffcc00 100%);
-
-      @include md {
-        height: 30rem;
-      }
-    }
-
-    .cta-band__bike--left img {
-      width: 34rem;
-    }
-
-    .cta-band__bike--right img {
-      width: 40rem;
-    }
-  }
 }
 
 .concern {
@@ -276,7 +257,7 @@
   background-color: $base;
   overflow: hidden;
   padding: 8rem 0 0;
-  background-image: url("../images/bg_concept.png");
+  background-image: url("../images/bg_concern.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -765,11 +746,11 @@
 }
 
 .strength {
-  background-color: $base;
+  position: relative;
   padding: 8rem 0 0;
 
   @include md {
-    padding-top: 6rem;
+    padding: 6rem 0;
   }
 
   &__inner {
@@ -777,38 +758,28 @@
   }
 
   &__label {
-    margin-bottom: 0.4rem;
-    color: rgba($white, 0.12);
+    color: rgba($white, 0.2);
     font-family: "Anton", sans-serif;
-    font-size: 8rem;
+    font-size: 60px;
     font-weight: 400;
     line-height: 1;
-    letter-spacing: 0.08em;
-
-    @include md {
-      font-size: 5.6rem;
-    }
+    letter-spacing: 0;
   }
 
   &__title {
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
     color: $brand;
-    font-size: 2.8rem;
+    font-size: 15px;
     font-weight: 700;
     line-height: 1.5;
-    letter-spacing: 0.06em;
-
-    @include md {
-      margin-bottom: 3.2rem;
-      font-size: 2.2rem;
-    }
+    letter-spacing: 0;
   }
 
   &__cards {
     display: flex;
     gap: 1.2rem;
-    margin: 0;
-    padding: 0;
+    margin-top: 3rem;
+    padding: 5rem 0;
     list-style: none;
 
     @include lg {
@@ -822,30 +793,22 @@
   &__card {
     position: relative;
     flex: 1;
-    min-width: 0;
-    padding-top: 2.8rem;
-
-    @include lg {
-      flex: 0 0 24rem;
-      scroll-snap-align: start;
-    }
+    width: 212px;
+    height: 355px;
   }
 
   &__num {
     position: absolute;
-    top: 0;
+    top: -2.8rem;
     left: 1.2rem;
     z-index: 2;
     color: $brand;
-    font-family: "Oswald", sans-serif;
-    font-size: 4.8rem;
-    font-weight: 700;
-    line-height: 1;
-    letter-spacing: 0.02em;
-
-    @include md {
-      font-size: 4rem;
-    }
+    font-family: "Anton", sans-serif;
+    font-size: 69px;
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: 0;
+    font-style: italic;
   }
 
   &__card-body {
@@ -859,76 +822,57 @@
 
     img {
       width: 100%;
-      aspect-ratio: 4 / 3;
-      object-fit: cover;
+      height: 140px;
+      object-fit: contain;
     }
   }
 
   &__card-title {
-    padding: 1.6rem 1.4rem 0.8rem;
+    padding: 1rem 0.6rem 2rem 0.6rem;
     color: $white;
-    font-size: 1.5rem;
+    font-size: 18px;
     font-weight: 700;
-    line-height: 1.6;
-    letter-spacing: 0.04em;
-
-    @include md {
-      font-size: 1.4rem;
-    }
+    line-height: 1.3;
+    letter-spacing: 0;
   }
 
   &__card-text {
-    padding: 0 1.4rem 1.6rem;
+    padding: 0 0.6rem;
     color: $white;
-    font-size: 1.3rem;
+    font-size: 16px;
     font-weight: 400;
-    line-height: 1.8;
-    letter-spacing: 0.02em;
-
-    @include md {
-      font-size: 1.2rem;
-    }
+    line-height: 1.5;
+    letter-spacing: 0;
   }
 
   &__choose {
-    margin-top: 8rem;
-    padding: 6rem 0 0;
+    padding: 6.5rem 0;
     background-color: $base;
     background-image: url("../images/bg_choose.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-
-    @include md {
-      margin-top: 6rem;
-      padding-top: 5rem;
-    }
   }
 
   &__choose-heading {
     position: relative;
-    display: inline-block;
     margin-bottom: 4rem;
-    padding-bottom: 1.2rem;
     color: $white;
-    font-size: 2.8rem;
+    font-size: 24px;
+    font-family: "Helvetica Neue";
     font-weight: 700;
     line-height: 1.6;
-    letter-spacing: 0.06em;
-
+    letter-spacing: 0;
+    width: fit-content;
     &::after {
       content: "";
       position: absolute;
       bottom: 0;
       left: 0;
       width: 100%;
-      height: 0.5rem;
-      background-color: $brand;
-    }
-
-    @include md {
-      margin-bottom: 3.2rem;
-      font-size: 2.2rem;
+      height: 5px;
+      background-color: #F18700;
+      clip-path: polygon(1% 0%, 100% 0%, 99% 100%, 0% 100%);
     }
   }
 
@@ -939,7 +883,7 @@
   &__choose-cards {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 1.6rem;
+    gap: 2rem;
     margin: 0;
     padding: 0;
     list-style: none;
@@ -954,7 +898,8 @@
   }
 
   &__choose-card {
-    background-color: #f0f0f0;
+    background-color: rgba($white, 0.8);
+    border: 1px solid $white;
   }
 
   &__choose-media {
@@ -962,73 +907,57 @@
 
     img {
       width: 100%;
-      aspect-ratio: 4 / 3;
-      object-fit: cover;
+      height: 180px;
+      object-fit: contain;
     }
   }
 
   &__choose-body {
-    padding: 1.6rem 1.4rem 2rem;
+    padding: 1.5rem 2.8rem;
   }
 
   &__choose-title {
-    margin-bottom: 0.8rem;
+    margin-bottom: 1.4rem;
     color: $base;
-    font-size: 1.6rem;
+    font-size: 18px;
     font-weight: 700;
-    line-height: 1.6;
-    letter-spacing: 0.04em;
-
-    @include md {
-      font-size: 1.5rem;
-    }
+    line-height: 1.3;
+    letter-spacing: 0;
+    min-height: 44px;
   }
 
   &__choose-text {
     color: $base;
-    font-size: 1.4rem;
+    font-size: 16px;
     font-weight: 400;
-    line-height: 1.8;
-    letter-spacing: 0.02em;
-
-    @include md {
-      font-size: 1.3rem;
-    }
+    line-height: 1.5;
+    letter-spacing: 0;
   }
 
   &__compare {
-    padding: 6rem 0 8rem;
+    padding: 5rem 0;
     background-color: $base;
-
-    @include md {
-      padding: 5rem 0 6rem;
-    }
   }
 
   &__compare-heading {
     position: relative;
-    display: inline-block;
     margin-bottom: 4rem;
-    padding-bottom: 1.2rem;
     color: $white;
-    font-size: 2.8rem;
+    font-size: 24px;
+    font-family: "Helvetica Neue";
     font-weight: 700;
     line-height: 1.6;
-    letter-spacing: 0.06em;
-
+    letter-spacing: 0;
+    width: fit-content;
     &::after {
       content: "";
       position: absolute;
       bottom: 0;
       left: 0;
       width: 100%;
-      height: 0.5rem;
-      background-color: $brand;
-    }
-
-    @include md {
-      margin-bottom: 3.2rem;
-      font-size: 2.2rem;
+      height: 5px;
+      background-color: #F18700;
+      clip-path: polygon(1% 0%, 100% 0%, 99% 100%, 0% 100%);
     }
   }
 
@@ -1049,22 +978,27 @@
 
     th,
     td {
-      border: 1px solid rgba($white, 0.2);
+      border: 1px solid $white;
       vertical-align: middle;
     }
 
     thead th {
       padding: 1.4rem 1rem;
       color: $white;
-      font-size: 1.6rem;
-      font-weight: 700;
+      font-size: 16px;
+      font-weight: 500;
       line-height: 1.5;
       text-align: center;
-      letter-spacing: 0.04em;
-      background-color: transparent;
+      letter-spacing: 0;
+      background-color: rgba($color: $white, $alpha: 0.1);
 
       &.is-featured {
         background-color: $brand;
+      }
+
+      &:nth-child(1) {
+        border: none;
+        background-color: transparent;
       }
 
       @include md {
@@ -1075,33 +1009,28 @@
     tbody th {
       padding: 1.4rem 1.6rem;
       color: $white;
-      font-size: 1.5rem;
+      font-size: 16px;
       font-weight: 500;
-      line-height: 1.6;
-      text-align: left;
-      letter-spacing: 0.04em;
-
-      @include md {
-        padding: 1.2rem;
-        font-size: 1.3rem;
-      }
+      line-height: 1.5;
+      text-align: center;
+      letter-spacing: 0;
     }
 
     tbody td {
       padding: 1.2rem 1rem;
       color: $white;
-      font-size: 2rem;
-      font-weight: 700;
+      font-size: 16px;
+      font-weight: 500;
       line-height: 1;
       text-align: center;
 
       &.is-featured {
         color: $brand;
       }
+    }
 
-      @include md {
-        font-size: 1.8rem;
-      }
+    tbody th {
+      background-color: rgba($color: $white, $alpha: 0.25);
     }
   }
 
@@ -1112,99 +1041,74 @@
 
 .price {
   padding: 8rem 0;
-  background-color: $base;
-  background-image: url("../images/bg_provide.png");
-  background-repeat: repeat;
-  background-size: auto;
+  background-image: url("../images/bg_concern.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 
   @include md {
     padding: 6rem 0;
   }
 
   &__label {
-    margin-bottom: 0.4rem;
-    color: rgba($white, 0.12);
+    color: rgba($white, 0.2);
     font-family: "Anton", sans-serif;
-    font-size: 8rem;
+    font-size: 60px;
     font-weight: 400;
     line-height: 1;
-    letter-spacing: 0.08em;
-
-    @include md {
-      font-size: 5.6rem;
-    }
+    letter-spacing: 0;
   }
 
   &__title {
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
     color: $brand;
-    font-size: 2.8rem;
+    font-size: 15px;
     font-weight: 700;
     line-height: 1.5;
-    letter-spacing: 0.06em;
-
-    @include md {
-      margin-bottom: 3.2rem;
-      font-size: 2.2rem;
-    }
+    letter-spacing: 0;
   }
 
   &__plans {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 2.4rem;
-    margin-bottom: 8rem;
-
+    gap: 6rem;
+    margin-bottom: 5rem;
+    margin-top: 1rem;
     @include lg {
       grid-template-columns: 1fr;
-      margin-bottom: 6rem;
     }
   }
 
   &__plan-label {
     margin-bottom: 1.2rem;
     color: $white;
-    font-size: 1.8rem;
+    font-size: 16px;
     font-weight: 700;
     line-height: 1.5;
-    letter-spacing: 0.04em;
-
-    @include md {
-      font-size: 1.6rem;
-    }
+    letter-spacing: 0;
   }
 
   &__fee-box {
     position: relative;
-    min-height: 22rem;
+    height: 230px;
     border: 1px solid $white;
-    background-image: url("../images/price.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+    padding: 2rem 1.5rem;
     overflow: hidden;
-
-    &::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        90deg,
-        rgba(21, 22, 25, 0.82) 0%,
-        rgba(21, 22, 25, 0.55) 55%,
-        rgba(21, 22, 25, 0.35) 100%
-      );
-    }
   }
 
   &__fee-content {
     position: relative;
-    z-index: 1;
+    background-image: url("../images/price.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
     display: flex;
+    align-items: flex-start;
+    justify-content: center;
     flex-direction: column;
-    justify-content: space-between;
-    min-height: 22rem;
-    padding: 2.4rem;
+    padding: 0 1.5rem;
   }
 
   &__fee-main {
@@ -1216,136 +1120,167 @@
 
   &__fee-amount {
     color: $white;
-    font-size: 5.6rem;
-    font-weight: 700;
-    line-height: 1;
-    letter-spacing: 0.02em;
-
-    @include md {
-      font-size: 4.4rem;
-    }
+    font-size: 42px;
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: 0;
+    font-family: "Anton", sans-serif;
+    letter-spacing: 2%;
   }
 
   &__fee-tilde {
-    font-size: 0.85em;
+    font-size: 60px;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: 0;
+    font-family: "Anton", sans-serif;
   }
 
   &__fee-tax {
     margin-bottom: 0.6rem;
     color: $white;
-    font-size: 1.6rem;
+    font-size: 15px;
     font-weight: 500;
-    line-height: 1.4;
-    letter-spacing: 0.04em;
-
-    @include md {
-      font-size: 1.4rem;
-    }
+    line-height: 1.5;
+    letter-spacing: 0;
   }
 
   &__fee-sizes {
     display: flex;
     gap: 0.8rem;
-    margin: 0;
+    margin: 1.6rem 0 1rem;
     padding: 0;
     list-style: none;
 
     li {
-      padding: 0.4rem 1.4rem;
+      width: 50px;
+      height: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       background-color: $brand;
       color: $white;
-      font-size: 1.4rem;
+      font-size: 15px;
       font-weight: 700;
-      line-height: 1.4;
-      letter-spacing: 0.04em;
+      line-height: 1.1;
+      letter-spacing: 0;
     }
   }
 
   &__fee-note {
     color: $white;
-    font-size: 1.3rem;
+    font-size: 15px;
     font-weight: 400;
-    line-height: 1.6;
-    letter-spacing: 0.02em;
+    line-height: 1.2;
+    letter-spacing: 0;
   }
 
   &__option-box {
-    display: flex;
-    flex-direction: column;
-    min-height: 22rem;
+    position: relative;
+    width: 100%;
+    height: 230px;
     border: 1px solid $white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2rem 1.5rem;
   }
 
   &__option-row {
+    width: 100%;
     display: flex;
     flex: 1;
     align-items: center;
     justify-content: space-between;
-    gap: 1.6rem;
-    padding: 2rem 1.6rem;
-    background-color: rgba($base, 0.78);
-    border-bottom: 1px solid rgba($white, 0.15);
-
-    &:last-child {
-      border-bottom: none;
-    }
-
-    @include md {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 0.8rem;
-      padding: 1.6rem;
-    }
+    padding: 3rem 4.5rem;
+    background-color: rgba($white, 0.2);
   }
 
-  &__option-name,
-  &__option-price {
-    color: $white;
-    font-size: 1.5rem;
-    font-weight: 500;
-    line-height: 1.6;
-    letter-spacing: 0.04em;
-
-    @include md {
-      font-size: 1.4rem;
-    }
-  }
-
-  &__option-price {
-    flex-shrink: 0;
+  &__option-name {
+    max-width: 183px;
+    font-size: 18px;
     font-weight: 700;
-    white-space: nowrap;
+    letter-spacing: 0;
+    line-height: 1.2;
+    color: white;
+  }
+
+  &__option-price {
+    display: flex;
+    align-items: flex-end;
+    gap: 0.5rem;
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
+    font-size: 36px;
+    letter-spacing: 2%;
+    color: white;
+    line-height: 1;
+  }
+
+  &__option-price-unit {
+    font-size: 24px;
+    letter-spacing: 13%;
+  }
+
+  &__option-price-tax {
+    font-size: 10px;
+    letter-spacing: 2%;
+  }
+
+  &__option-price-month {
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: 1.5;
+    font-family: "Noto Sans JP", sans-serif;
   }
 
   &__provide {
-    margin-bottom: 8rem;
-
-    @include md {
-      margin-bottom: 6rem;
-    }
+    padding: 4rem 0;
+    background-image: url("../images/bg_provide.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
   }
 
   &__provide-note {
-    margin-bottom: 1.6rem;
-    padding-bottom: 0.6rem;
-    border-bottom: 2px solid $brand;
+    position: relative;
+    margin-bottom: 4rem;
+    padding-bottom: 1rem;
     color: $white;
-    font-size: 1.4rem;
-    font-weight: 500;
+    font-size: 18px;
+    font-weight: 700;
     line-height: 1.6;
-    letter-spacing: 0.04em;
+    letter-spacing: 0;
+    width: fit-content;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background-color: #F18700;
+      clip-path: polygon(1% 0%, 100% 0%, 99% 100%, 0% 100%);
+    }
   }
 
   &__provide-heading {
-    margin-bottom: 1.6rem;
+    margin-bottom: 0.4rem;
     color: $white;
-    font-size: 2.8rem;
+    font-family: "Noto Sans Javanese", sans-serif;
+    font-size: 20px;
     font-weight: 700;
-    line-height: 1.6;
-    letter-spacing: 0.06em;
-
-    @include md {
-      font-size: 2.2rem;
+    line-height: 1.3;
+    letter-spacing: 0;
+    text-align: center;
+    span {
+      font-size: 28px;
     }
   }
 
@@ -1354,17 +1289,13 @@
   }
 
   &__provide-lead {
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
     color: $white;
-    font-size: 1.5rem;
+    font-size: 16px;
     font-weight: 400;
-    line-height: 1.9;
-    letter-spacing: 0.04em;
-
-    @include md {
-      margin-bottom: 3.2rem;
-      font-size: 1.4rem;
-    }
+    line-height: 1.5;
+    letter-spacing: 0;
+    text-align: center;
   }
 
   &__provide-cards {
@@ -1386,7 +1317,6 @@
 
   &__provide-card {
     position: relative;
-    padding-top: 2rem;
   }
 
   &__provide-num {
@@ -1397,22 +1327,24 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 4rem;
-    height: 4rem;
+    width: 50px;
+    height: 50px;
     background-color: $brand;
     border-radius: 50%;
     color: $white;
-    font-size: 1.6rem;
-    font-weight: 700;
+    font-size: 25px;
+    font-weight: 400;
     line-height: 1;
-    transform: translateX(-50%);
+    transform: translate(-50%, -50%);
+    font-style: italic;
+    font-family: "Anton", sans-serif;
+    padding-right: 0.4rem;
   }
 
   &__provide-card-body {
     height: 100%;
-    padding: 3.2rem 1.6rem 2rem;
-    border: 1px solid $white;
-    background-color: #f0f0f0;
+    padding: 3.2rem 1.6rem 1.2rem;
+    background-color: rgba($color: $white, $alpha: 0.8);
     text-align: center;
   }
 
@@ -1421,11 +1353,10 @@
     align-items: center;
     justify-content: center;
     margin-bottom: 1.2rem;
-    min-height: 8rem;
 
     img {
-      width: 8rem;
-      height: auto;
+      width: 105px;
+      height: 105px;
       object-fit: contain;
     }
   }
@@ -1433,35 +1364,38 @@
   &__provide-card-title {
     margin-bottom: 1rem;
     color: $brand;
-    font-size: 1.5rem;
+    font-size: 20px;
     font-weight: 700;
-    line-height: 1.6;
-    letter-spacing: 0.04em;
-
-    @include md {
-      font-size: 1.4rem;
+    line-height: 1.3;
+    letter-spacing: 0;
+    span {
+      font-size: 16px;
     }
   }
 
   &__provide-card-text {
     color: $base;
-    font-size: 1.3rem;
+    font-size: 16px;
     font-weight: 400;
     line-height: 1.8;
-    letter-spacing: 0.02em;
-    text-align: left;
-
-    @include md {
-      font-size: 1.2rem;
+    letter-spacing: 2%;
+    text-align: center;
+    span {
+      font-size: 14px;
     }
   }
 
   &__provide-banner {
+    position: relative;
+    margin-bottom: 7rem;
+  }
+
+  &__provide-banner-inner {
     display: flex;
     align-items: center;
     gap: 2rem;
-    padding: 2.4rem 2.8rem;
-    background-color: $brand;
+    padding: 2rem 9rem;
+    background: linear-gradient(to right, #F18700, #F9D423);
 
     @include md {
       flex-direction: column;
@@ -1475,13 +1409,9 @@
     flex-shrink: 0;
     align-items: center;
     justify-content: center;
-    width: 8rem;
-    height: 8rem;
-    background-color: $white;
-    border-radius: 50%;
 
     img {
-      width: 5rem;
+      width: 90px;
       height: auto;
       object-fit: contain;
     }
@@ -1490,129 +1420,104 @@
   &__provide-banner-text {
     margin-bottom: 0.8rem;
     color: $white;
-    font-size: 1.4rem;
-    font-weight: 500;
-    line-height: 1.8;
-    letter-spacing: 0.04em;
-
-    @include md {
-      font-size: 1.3rem;
-    }
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: 0;
   }
 
   &__provide-banner-emphasis {
     margin-bottom: 0.8rem;
-    color: $white;
-    font-size: 2rem;
+    color: $base;
+    font-size: 24px;
     font-weight: 700;
-    line-height: 1.6;
-    letter-spacing: 0.06em;
-
-    @include md {
-      font-size: 1.7rem;
-    }
+    line-height: 1.3;
+    letter-spacing: 0;
   }
 
   &__provide-banner-note {
-    color: rgba($white, 0.9);
-    font-size: 1.2rem;
+    color: white;
+    font-size: 14px;
     font-weight: 400;
-    line-height: 1.7;
-    letter-spacing: 0.02em;
+    line-height: 1.5;
+    letter-spacing: 0;
   }
 
   &__steps-heading {
     position: relative;
-    display: inline-block;
-    margin-bottom: 4rem;
-    padding-bottom: 1.2rem;
+    margin-bottom: 8.5rem;
     color: $white;
-    font-size: 2.8rem;
+    font-size: 24px;
     font-weight: 700;
     line-height: 1.6;
-    letter-spacing: 0.06em;
-
+    font-family: "Helvetica Neue";
+    width: fit-content;
+    padding-bottom: 0.8rem;
+    span {
+      color: $brand;
+    }
     &::after {
       content: "";
       position: absolute;
       bottom: 0;
       left: 0;
       width: 100%;
-      height: 0.5rem;
-      background-color: $brand;
-    }
-
-    @include md {
-      margin-bottom: 3.2rem;
-      font-size: 2.2rem;
+      height: 5px;
+      background-color: #F18700;
+      clip-path: polygon(1% 0%, 100% 0%, 99% 100%, 0% 100%);
     }
   }
 
   &__steps-heading-num {
-    color: $brand;
-    font-size: 3.6rem;
-    font-weight: 700;
+    font-size: 48px;
     line-height: 1;
-
-    @include md {
-      font-size: 2.8rem;
-    }
   }
 
   &__steps {
     display: flex;
-    align-items: flex-start;
-    gap: 0;
+    align-items: center;
+    gap: 2.4rem;
     margin: 0;
     padding: 0;
     list-style: none;
-
-    @include lg {
-      flex-direction: column;
-      align-items: stretch;
-    }
   }
 
   &__step {
+    position: relative;
     flex: 1;
     min-width: 0;
   }
 
   &__step-label {
+    position: absolute;
+    top: 0;
+    left: 2rem;
+    transform: translateY(-50%);
     display: flex;
-    align-items: baseline;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
     gap: 0.4rem;
-    margin-bottom: 0.8rem;
     font-family: "Anton", sans-serif;
-    font-size: 3.6rem;
+    font-size: 28px;
     font-weight: 400;
     font-style: italic;
     line-height: 1;
+    letter-spacing: 0;
     color: $brand;
-    -webkit-text-stroke: 1.5px $white;
-    paint-order: stroke fill;
-
-    @include md {
-      font-size: 3rem;
-    }
   }
 
-  &__step-label-word {
-    font-size: 0.72em;
+  &__step-label-num {
+    font-size: 69px;
   }
 
   &__step-box {
     display: flex;
     align-items: center;
     gap: 1.2rem;
-    min-height: 11rem;
-    padding: 1.6rem;
+    padding: 3.5rem 2.3rem;
     border: 1px solid $white;
-
-    @include md {
-      min-height: 0;
-      padding: 1.4rem;
-    }
+    min-height: 180px;
   }
 
   &__step-icon {
@@ -1620,13 +1525,13 @@
     flex-shrink: 0;
     align-items: center;
     justify-content: center;
-    width: 6.5rem;
-    height: 6.5rem;
+    width: 65px;
+    height: 65px;
     background-color: $white;
     border-radius: 50%;
 
     img {
-      width: 4.2rem;
+      width: 42px;
       height: auto;
       object-fit: contain;
     }
@@ -1635,136 +1540,101 @@
   &__step-title {
     margin-bottom: 0.6rem;
     color: $white;
-    font-size: 1.5rem;
+    font-size: 18px;
     font-weight: 700;
     line-height: 1.6;
-    letter-spacing: 0.04em;
-
-    @include md {
-      font-size: 1.4rem;
-    }
+    letter-spacing: 0;
   }
 
   &__step-text {
-    color: rgba($white, 0.9);
-    font-size: 1.3rem;
+    color: white;
+    font-size: 16px;
     font-weight: 400;
     line-height: 1.7;
-    letter-spacing: 0.02em;
-
-    @include md {
-      font-size: 1.2rem;
-    }
+    letter-spacing: 2%;
   }
 
   &__arrow {
-    flex-shrink: 0;
-    align-self: center;
-    width: 0;
-    height: 0;
-    margin: 4.8rem 0.8rem 0;
-    border-top: 1rem solid transparent;
-    border-bottom: 1rem solid transparent;
-    border-left: 1.4rem solid $brand;
-
-    @include lg {
-      margin: 1.2rem auto;
-      border-top: 1.4rem solid $brand;
-      border-right: 1rem solid transparent;
-      border-left: 1rem solid transparent;
-      border-bottom: none;
+    width: 20px;
+    height: 34px;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
     }
   }
 }
 
 .faq {
   background-color: $base;
-  padding: 8rem 0;
+  padding: 6rem 0;
 
   @include md {
-    padding: 6rem 0;
+    padding: 4rem 0;
   }
 
   &__label {
-    margin-bottom: 0.4rem;
-    color: rgba($white, 0.12);
+    color: rgba($white, 0.2);
     font-family: "Anton", sans-serif;
-    font-size: 8rem;
+    font-size: 60px;
     font-weight: 400;
     line-height: 1;
-    letter-spacing: 0.08em;
-
-    @include md {
-      font-size: 5.6rem;
-    }
+    letter-spacing: 0;
   }
 
   &__title {
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
     color: $brand;
-    font-size: 2.8rem;
+    font-size: 15px;
     font-weight: 700;
     line-height: 1.5;
-    letter-spacing: 0.06em;
-
-    @include md {
-      margin-bottom: 3.2rem;
-      font-size: 2.2rem;
-    }
+    letter-spacing: 0;
   }
 
   &__list {
     display: flex;
     flex-direction: column;
     gap: 1.2rem;
+    margin-top: 3.5rem;
   }
 
   &__item {
-    background-color: #2a2b2f;
-    border-radius: 0.4rem;
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+    background-color: rgba($color: #fff, $alpha: 0.2);
     overflow: hidden;
   }
 
   &__question {
     display: flex;
     align-items: center;
-    gap: 1.2rem;
+    gap: 2rem;
     width: 100%;
-    padding: 1.8rem 2rem;
+    padding: 2rem 4rem;
     border: none;
     background: none;
     color: $white;
     text-align: left;
     cursor: pointer;
-
-    @include md {
-      padding: 1.6rem;
-      gap: 1rem;
-    }
   }
 
   &__q,
   &__a {
+    color: white;
     flex-shrink: 0;
-    font-size: 2rem;
-    font-weight: 700;
+    font-size: 24px;
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
     line-height: 1;
-
-    @include md {
-      font-size: 1.8rem;
-    }
   }
 
   &__question-text {
     flex: 1;
-    font-size: 1.6rem;
+    font-size: 18px;
     font-weight: 700;
     line-height: 1.6;
-    letter-spacing: 0.04em;
-
-    @include md {
-      font-size: 1.4rem;
-    }
+    letter-spacing: 0;
   }
 
   &__icon {
@@ -1796,26 +1666,18 @@
 
   &__answer-inner {
     display: flex;
-    align-items: flex-start;
-    gap: 1.2rem;
-    padding: 1.8rem 2rem 2rem;
-
-    @include md {
-      padding: 1.6rem;
-      gap: 1rem;
-    }
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+    padding: 2rem 4rem;
   }
 
   &__answer-text {
     flex: 1;
     color: $white;
-    font-size: 1.5rem;
-    font-weight: 400;
-    line-height: 1.9;
-    letter-spacing: 0.02em;
-
-    @include md {
-      font-size: 1.4rem;
-    }
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 0;
   }
 }
