@@ -1,36 +1,18 @@
 .fv {
   position: relative;
-  min-height: 72rem;
+  min-height: 560px;
   overflow: hidden;
-
+  background-image: url("../images/bg_firstview.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 100px;
   @include md {
     min-height: 60rem;
   }
 
-  &__bg {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-    }
-  }
-
-  &__overlay {
-    position: absolute;
-    inset: 0;
-    z-index: 1;
-    background: linear-gradient(
-      90deg,
-      rgba(21, 22, 25, 0.72) 0%,
-      rgba(21, 22, 25, 0.45) 55%,
-      rgba(21, 22, 25, 0.25) 100%
-    );
-  }
 
   &__inner {
     position: relative;
@@ -39,9 +21,6 @@
     align-items: center;
     justify-content: space-between;
     gap: 4rem;
-    min-height: 72rem;
-    padding-top: 10rem;
-    padding-bottom: 6rem;
 
     @include lg {
       flex-direction: column;
@@ -49,7 +28,6 @@
       justify-content: center;
       gap: 4rem;
       min-height: 60rem;
-      padding-top: 12rem;
     }
   }
 
@@ -62,97 +40,79 @@
   &__label {
     position: relative;
     display: inline-block;
-    margin-bottom: 2.4rem;
-    font-size: 1.6rem;
-    font-weight: 500;
-    line-height: 1.6;
-    --highlight-color: #{$brand};
-    --highlight-width: 100%;
-    --highlight-height: 0.6rem;
-    --highlight-bottom: 0.2rem;
-    --highlight-left: 0;
-    --highlight-margin-left: 0;
+    font-family: "Helvetica Neue";
+    margin-bottom: 3.4rem;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.2;
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background-color: $brand;
+      clip-path: polygon(1% 0%, 100% 0%, 99% 100%, 0% 100%);
+      z-index: -1;
+    }
   }
 
   &__title {
-    margin-bottom: 2.4rem;
-    font-size: 4.8rem;
+    margin-bottom: 1.4rem;
+    font-family: "Noto Sans Javanese", sans-serif;
+    font-size: 50px;
     font-weight: 700;
-    line-height: 1.45;
-    letter-spacing: 0.04em;
-
-    @include md {
-      font-size: 3.2rem;
-    }
-  }
-
-  &__title-line {
-    display: block;
+    line-height: 1.2;
+    letter-spacing: 0;
   }
 
   &__desc {
-    font-size: 1.6rem;
-    font-weight: 400;
-    line-height: 1.9;
-    letter-spacing: 0.02em;
-
-    @include md {
-      font-size: 1.4rem;
-    }
+    font-family: "Helvetica Neue";
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.5;
+    letter-spacing: 0;
   }
 
   &__features {
     display: flex;
     flex-direction: column;
-    gap: 1.6rem;
+    gap: 3rem;
     flex-shrink: 0;
-    padding-top: 2rem;
-
-    @include lg {
-      width: 100%;
-      max-width: 36rem;
-      padding-top: 0;
-    }
   }
 
   &__feature {
     background-color: $white;
-    transform: skewX(-12deg);
-    box-shadow: 0 0.4rem 1.2rem rgba(0, 0, 0, 0.12);
+    clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
+    width: fit-content;
   }
 
   &__feature-inner {
     display: flex;
     align-items: center;
+    padding: 0.6rem 4.8rem;
     gap: 1rem;
-    transform: skewX(12deg);
-    padding: 1.4rem 3.2rem 1.4rem 2.4rem;
-    min-width: 28rem;
-
-    @include md {
-      min-width: 0;
-      padding: 1.2rem 2.4rem 1.2rem 2rem;
-    }
   }
 
   &__feature-check {
     flex-shrink: 0;
     color: $brand;
-    font-size: 2rem;
+    font-size: 40px;
     font-weight: 700;
     line-height: 1;
   }
 
   &__feature-text {
     color: $brand;
-    font-size: 1.8rem;
-    font-weight: 700;
+    font-size: 24px;
+    font-weight: 900;
     line-height: 1.4;
     white-space: nowrap;
-
-    @include md {
-      font-size: 1.5rem;
-      white-space: normal;
+    letter-spacing: 7%;
+    font-style: italic;
+    span {
+      font-size: 34px;
     }
   }
 }
@@ -160,85 +120,47 @@
 .cta-band {
   position: relative;
   background-color: $base;
-  overflow: hidden;
-  padding: 6rem 0 0;
-
-  @include md {
-    padding: 4rem 0 0;
-  }
-
-  &__stripe {
+  min-height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &::after {
+    content: "";
     position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 140%;
-    height: 20rem;
-    background-color: $cta-yellow;
-    transform: translate(-50%, -50%) skewY(-5deg);
-    z-index: 0;
-
-    @include md {
-      height: 28rem;
-      transform: translate(-50%, -50%) skewY(-3deg);
-    }
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 250px;
+    background: linear-gradient(to top, #F18700 0%, #F9D423 100%);
+    clip-path: polygon(0 30%, 100% 0%, 100% 70%, 0% 100%);
   }
 
   &__inner {
     position: relative;
     z-index: 1;
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     justify-content: center;
-    gap: 1rem;
-    max-width: 1110px;
-    margin: 0 auto;
-    padding: 0 2rem;
-    min-height: 26rem;
-
-    @include lg {
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-      gap: 2rem;
-      padding-bottom: 4rem;
-      min-height: auto;
-    }
   }
 
   &__bike {
-    flex-shrink: 0;
-    line-height: 0;
-
+    z-index: 2;
     img {
-      display: block;
+      width: 34rem;
       height: auto;
       object-fit: contain;
     }
 
     &--left {
-      align-self: flex-end;
-      margin-right: -2rem;
-
-      img {
-        width: 32rem;
-      }
-
-      @include lg {
-        display: none;
-      }
+      position: absolute;
+      left: 1.2rem;
+      bottom: 0;
     }
 
     &--right {
-      align-self: flex-end;
-      margin-left: -2rem;
-
-      img {
-        width: 38rem;
-      }
-
-      @include lg {
-        display: none;
-      }
+      position: absolute;
+      right: 1.2rem;
+      top: -2rem;
     }
   }
 
@@ -247,46 +169,39 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding: 2rem 0 4rem;
-    flex-shrink: 0;
-
-    @include lg {
-      width: 100%;
-      padding: 3rem 0 4rem;
-    }
   }
 
   &__title {
-    margin-bottom: 0.8rem;
-    font-size: 2.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    margin-bottom: 1.4rem;
+    font-size: 24px;
+    font-family: "Helvetica Neue", sans-serif;
     font-weight: 700;
-    line-height: 1.5;
-    letter-spacing: 0.06em;
+    line-height: 1;
+    letter-spacing: 0;
     color: $base;
-    white-space: nowrap;
-
-    @include md {
-      font-size: 2rem;
-      white-space: normal;
-    }
   }
 
   &__title-slash {
     color: $white;
     font-weight: 700;
+    line-height: 1;
+  }
+
+  &__title-highlight {
+    color: $white;
   }
 
   &__lead {
-    margin-bottom: 1.6rem;
+    margin-bottom: 1rem;
     color: $white;
-    font-size: 1.6rem;
-    font-weight: 500;
+    font-size: 16px;
+    font-weight: 700;
     line-height: 1.6;
-    letter-spacing: 0.04em;
-
-    @include md {
-      font-size: 1.4rem;
-    }
+    letter-spacing: 0;
   }
 
   &__btn {
@@ -295,10 +210,10 @@
     align-items: center;
     justify-content: center;
     gap: 0.2rem;
-    min-width: 32rem;
-    padding: 1.2rem 4rem 1.6rem;
-    background-color: $line-green;
-    border-radius: 5rem;
+    min-width: 40rem;
+    height: 57px;
+    background-color: #06C755;
+    border-radius: 15px;
     color: $white;
     text-decoration: none;
     transition: opacity 0.2s ease, transform 0.2s ease;
@@ -307,40 +222,33 @@
       opacity: 0.9;
       transform: translateY(-2px);
     }
-
-    @include md {
-      min-width: 0;
-      width: 100%;
-      max-width: 32rem;
-      padding: 1.2rem 2.4rem 1.4rem;
-    }
   }
 
   &__btn-sub {
-    font-size: 1.3rem;
-    font-weight: 700;
+    font-size: 14px;
+    font-weight: 500;
     line-height: 1.4;
-    letter-spacing: 0.08em;
+    letter-spacing: 0;
   }
 
   &__btn-main {
     display: inline-flex;
     align-items: center;
     gap: 1.2rem;
-    font-size: 2.4rem;
+    font-size: 18px;
     font-weight: 700;
     line-height: 1.3;
-    letter-spacing: 0.04em;
-
-    @include md {
-      font-size: 2rem;
+    letter-spacing: 0;
+    font-family: "Helvetica Neue";
+    span {
+      font-size: 14px;
     }
   }
 
   &__btn-arrow {
     flex-shrink: 0;
-    width: 1rem;
-    height: auto;
+    width: 10px;
+    height: 16px;
   }
 
   &--alt {
@@ -351,10 +259,6 @@
       @include md {
         height: 30rem;
       }
-    }
-
-    .cta-band__title-slash {
-      color: $base;
     }
 
     .cta-band__bike--left img {
@@ -372,19 +276,12 @@
   background-color: $base;
   overflow: hidden;
   padding: 8rem 0 0;
-
+  background-image: url("../images/bg_concept.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   @include md {
     padding-top: 6rem;
-  }
-
-  &__bg {
-    position: absolute;
-    inset: 0;
-    background-image: url("../images/bg_concept.png");
-    background-repeat: repeat;
-    background-size: auto;
-    opacity: 0.6;
-    pointer-events: none;
   }
 
   &__inner {
@@ -395,16 +292,12 @@
   &__heading {
     margin-bottom: 5rem;
     color: $white;
-    font-size: 3.2rem;
+    font-size: 34px;
     font-weight: 700;
-    line-height: 1.6;
+    line-height: 1.1;
     text-align: center;
-    letter-spacing: 0.06em;
-
-    @include md {
-      margin-bottom: 3.2rem;
-      font-size: 2.4rem;
-    }
+    letter-spacing: 0;
+    font-family: "Noto Sans Javanese", sans-serif;
   }
 
   &__accent {
@@ -420,8 +313,6 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     margin-bottom: 6rem;
-    border-top: 1px solid rgba($white, 0.12);
-    border-left: 1px solid rgba($white, 0.12);
 
     @include lg {
       grid-template-columns: repeat(2, 1fr);
@@ -436,9 +327,7 @@
     display: flex;
     align-items: center;
     gap: 2rem;
-    padding: 3rem 2.4rem;
-    border-right: 1px solid rgba($white, 0.12);
-    border-bottom: 1px solid rgba($white, 0.12);
+    padding: 2.5rem 2.4rem;
 
     @include md {
       gap: 1.6rem;
@@ -459,49 +348,37 @@
   }
 
   &__text {
+    max-width: 160px;
     color: $white;
-    font-size: 1.8rem;
-    font-weight: 500;
-    line-height: 1.7;
-    letter-spacing: 0.04em;
-
-    @include md {
-      font-size: 1.5rem;
-    }
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.4;
+    letter-spacing: 0;
+    text-align: center;
   }
 
   &__solution {
-    margin-bottom: 2.4rem;
+    margin-bottom: 1.4rem;
     color: $white;
-    font-size: 3.2rem;
+    font-size: 34px;
     font-weight: 700;
-    line-height: 1.6;
+    line-height: 1;
     text-align: center;
-    letter-spacing: 0.06em;
-
-    @include md {
-      font-size: 2.2rem;
-    }
+    letter-spacing: 0;
+    font-family: "Noto Sans Javanese", sans-serif;
   }
 
   &__exclaim {
-    font-size: 1.2em;
+    font-size: 40px;
+    font-style: italic;
   }
 
   &__arrow {
-    width: 0;
-    height: 0;
-    margin: 0 auto 5rem;
-    border-top: 2.4rem solid $white;
-    border-right: 1.6rem solid transparent;
-    border-left: 1.6rem solid transparent;
-
-    @include md {
-      margin-bottom: 3.2rem;
-      border-top-width: 2rem;
-      border-right-width: 1.2rem;
-      border-left-width: 1.2rem;
-    }
+    width: 120px;
+    height: 28px;
+    background-color: white;
+    clip-path: polygon(0 0, 50% 100%, 100% 0);
+    margin: 0 auto 2.5rem auto;
   }
 
   &__concepts {
@@ -522,7 +399,6 @@
   &__concept {
     position: relative;
     overflow: hidden;
-    aspect-ratio: 3 / 4;
 
     img {
       width: 100%;
@@ -534,7 +410,7 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: rgba($base, 0.45);
+      background: rgba($base, 0.3);
     }
   }
 
@@ -545,49 +421,36 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 2rem;
     color: $white;
-    font-size: 2rem;
+    font-size: 20px;
     font-weight: 700;
     line-height: 1.5;
     text-align: center;
-    letter-spacing: 0.06em;
-
-    @include md {
-      font-size: 1.6rem;
-    }
+    letter-spacing: 0;
   }
 }
 
 .protect {
-  background-color: $base;
-  padding: 8rem 0 6rem;
+  position: relative;
+  padding: 8rem 0;
 
   @include md {
-    padding: 6rem 0 4rem;
+    padding: 6rem 0;
   }
 
   &__header {
-    margin-bottom: 5rem;
+    margin-bottom: 3rem;
     text-align: center;
-
-    @include md {
-      margin-bottom: 3.2rem;
-    }
   }
 
   &__title {
-    margin-bottom: 3.2rem;
+    margin-bottom: 1.2rem;
     color: $white;
-    font-size: 3.2rem;
+    font-size: 28px;
+    font-family: "Noto Sans Javanese", sans-serif;
     font-weight: 700;
-    line-height: 1.7;
-    letter-spacing: 0.06em;
-
-    @include md {
-      margin-bottom: 2.4rem;
-      font-size: 2.4rem;
-    }
+    line-height: 2;
+    letter-spacing: 0;
   }
 
   &__title-accent {
@@ -595,34 +458,27 @@
     display: inline-block;
 
     &::before {
-      content: "・・・・・・・";
+      content: "";
       position: absolute;
-      top: -1.4rem;
+      top: -1rem;
       left: 50%;
-      color: $brand;
-      font-size: 1rem;
-      font-weight: 700;
-      line-height: 1;
-      letter-spacing: 0.35em;
-      white-space: nowrap;
+      width: 7px;
+      height: 7px;
+      background-color: $brand;
+      border-radius: 50%;
       transform: translateX(-50%);
     }
   }
 
   &__lead {
-    max-width: 90rem;
+    max-width: 676px;
     margin: 0 auto 1.6rem;
     color: $white;
-    font-size: 1.6rem;
+    font-size: 16px;
     font-weight: 400;
-    line-height: 2;
-    letter-spacing: 0.04em;
-    text-align: left;
-
-    @include md {
-      font-size: 1.4rem;
-      line-height: 1.9;
-    }
+    line-height: 1.5;
+    letter-spacing: 0;
+    text-align: center;
   }
 
   &__highlight {
@@ -631,95 +487,90 @@
   }
 
   &__note {
-    max-width: 90rem;
-    margin: 0 auto;
-    color: rgba($white, 0.85);
-    font-size: 1.3rem;
+    color: white;
+    font-size: 12px;
     line-height: 1.7;
-    text-align: left;
+    text-align: center;
   }
 
   &__compare {
+    max-width: 900px;
+    width: 100%;
     display: flex;
-    align-items: stretch;
-    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
     gap: 1.6rem;
-    margin-bottom: 2.4rem;
-
-    @include lg {
-      flex-direction: column;
-      align-items: center;
-    }
+    margin: 0 auto 2.4rem auto;
   }
 
   &__panel {
     flex: 1;
-    max-width: 48rem;
+    max-width: 400px;
+    min-height: 608px;
     overflow: hidden;
-    border-radius: 0.4rem;
-
-    @include lg {
-      width: 100%;
-      max-width: 56rem;
-    }
-
-    &--moto {
-      border: 2px solid $brand;
-      border-radius: 0.4rem;
-    }
   }
 
-  &__panel-head,
-  &__panel-foot {
+  &__panel-head {
     padding: 1.4rem 2rem;
     color: $white;
-    font-size: 1.8rem;
+    font-size: 22px;
     font-weight: 700;
-    line-height: 1.5;
+    line-height: 1.3;
     text-align: center;
-    letter-spacing: 0.06em;
-
-    @include md {
-      font-size: 1.6rem;
-    }
+    letter-spacing: 0;
+  }
+  &__panel-foot {
+    padding: 1.2rem 2rem;
+    color: $white;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.3;
+    text-align: center;
+    letter-spacing: 0;
   }
 
-  &__panel--home &__panel-head,
+  &__panel--home &__panel-head {
+    background-color: #585858;
+  }
+
   &__panel--home &__panel-foot {
-    background-color: $protect-gray;
+    background-color: #A0A0A0;
   }
 
-  &__panel--moto &__panel-head,
-  &__panel--moto &__panel-foot {
+  &__panel--moto &__panel-head {
     background-color: $brand;
+  }
+  &__panel--moto &__panel-foot {
+    background-color: #F4A94A;
   }
 
   &__list {
     background-color: $white;
+    padding: 5px 3rem;
+  }
+
+  &__panel--moto &__row {
+    padding: 1.25rem 0;
   }
 
   &__row {
     display: flex;
     align-items: flex-start;
     gap: 1.6rem;
-    padding: 2rem 2.4rem;
-    border-bottom: 1px solid #e8e8e8;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid #BEC3D2;
 
     &:last-child {
       border-bottom: none;
-    }
-
-    @include md {
-      padding: 1.6rem;
-      gap: 1.2rem;
     }
   }
 
   &__icon {
     flex-shrink: 0;
-    width: 5.6rem;
-    height: 5.6rem;
-
+    width: 76px;
+    height: 76px;
+    border: 1px solid #BEC3D2;
+    border-radius: 50%;
     img {
       width: 100%;
       height: 100%;
@@ -728,61 +579,46 @@
   }
 
   &__row-title {
-    margin-bottom: 0.6rem;
+    margin-bottom: 1rem;
     color: $base;
-    font-size: 1.6rem;
+    font-size: 20px;
     font-weight: 700;
-    line-height: 1.5;
-    letter-spacing: 0.04em;
+    line-height: 1.3;
+    letter-spacing: 0;
 
     &--accent {
       color: $brand;
     }
 
-    @include md {
-      font-size: 1.5rem;
+    &.small {
+      font-size: 16px;
     }
   }
 
   &__row-text {
     color: $base;
-    font-size: 1.4rem;
+    font-size: 16px;
     font-weight: 400;
-    line-height: 1.8;
-    letter-spacing: 0.02em;
-
-    @include md {
-      font-size: 1.3rem;
+    line-height: 1.5;
+    letter-spacing: 0;
+    span {
+      font-size: 13px;
     }
   }
 
   &__arrow {
-    flex-shrink: 0;
-    align-self: center;
-    width: 0;
-    height: 0;
-    border-top: 1.6rem solid transparent;
-    border-bottom: 1.6rem solid transparent;
-    border-left: 2.4rem solid $brand;
-
-    @include lg {
-      border-top: 2rem solid $brand;
-      border-right: 2rem solid transparent;
-      border-left: 2rem solid transparent;
-      border-bottom: none;
-    }
+    width: 70px;
+    height: 50px;
+    clip-path: polygon(0% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%);
+    background: linear-gradient(to left, #F18700, #F9D423);
+    margin: 0 auto;
   }
 
   &__disclaimer {
-    color: rgba($white, 0.75);
-    font-size: 1.2rem;
+    color: white;
+    font-size: 12px;
     line-height: 1.7;
     text-align: right;
-
-    @include md {
-      font-size: 1.1rem;
-      text-align: left;
-    }
   }
 }
 
@@ -792,111 +628,114 @@
   padding: 8rem 0;
   background-image: url("../images/bg_service.png");
   background-repeat: no-repeat;
-  background-position: center right;
+  background-position: center;
   background-size: cover;
 
   @include md {
     padding: 6rem 0;
   }
 
-  &__overlay {
-    position: absolute;
-    inset: 0;
-    z-index: 1;
-    background: linear-gradient(
-      90deg,
-      rgba(21, 22, 25, 0.88) 0%,
-      rgba(21, 22, 25, 0.72) 45%,
-      rgba(21, 22, 25, 0.35) 100%
-    );
-  }
-
   &__inner {
     position: relative;
     z-index: 2;
-    max-width: 72rem;
   }
 
   &__label {
-    margin-bottom: 0.4rem;
-    color: rgba($white, 0.35);
+    color: rgba($white, 0.2);
     font-family: "Anton", sans-serif;
-    font-size: 8rem;
-    font-weight: 700;
+    font-size: 60px;
+    font-weight: 400;
     line-height: 1;
-    letter-spacing: 0.08em;
-
-    @include md {
-      font-size: 5.6rem;
-    }
+    letter-spacing: 0;
   }
 
   &__title {
-    margin-bottom: 2.4rem;
+    margin-bottom: 2rem;
     color: $brand;
-    font-size: 2.8rem;
+    font-size: 15px;
     font-weight: 700;
     line-height: 1.5;
-    letter-spacing: 0.06em;
-
-    @include md {
-      font-size: 2.2rem;
-    }
+    letter-spacing: 0;
   }
 
   &__desc {
+    max-width: 530px;
     margin-bottom: 4rem;
     color: $white;
-    font-size: 1.6rem;
+    font-size: 16px;
     font-weight: 400;
-    line-height: 2;
-    letter-spacing: 0.04em;
-
-    @include md {
-      margin-bottom: 3.2rem;
-      font-size: 1.4rem;
-      line-height: 1.9;
-    }
-  }
-
-  &__emphasis {
-    color: $brand;
-    font-size: 2.4rem;
-    font-weight: 700;
-    line-height: 1;
-
-    @include md {
-      font-size: 2rem;
+    line-height: 1.4;
+    letter-spacing: 0;
+    span {
+      font-size: 22px;
+      color: $brand;
+      font-weight: 700;
+      line-height: 1;
     }
   }
 
   &__cards {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.6rem;
-    max-width: 62rem;
-
-    @include sm {
-      grid-template-columns: 1fr;
-    }
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    max-width: 530px;
+    padding: 4px 4px 4px 0;
+    gap: 1.5rem;
   }
 
   &__card {
+    --card-w: 248px;
+    --card-h: 94px;
+    --card-skew: -5.42deg;
+    --card-shape-h: 70.5px;
+    --card-border-offset: 4px;
+
     position: relative;
-    transform: skewX(-12deg);
-    background: linear-gradient(135deg, #ffcc00 0%, $brand 100%);
-    border-top: 2px solid $white;
-    border-left: 2px solid $white;
-    box-shadow: 0.3rem 0.3rem 0 $white, 0.4rem 0.6rem 1.2rem rgba(0, 0, 0, 0.25);
+    display: flex;
+    align-items: center;
+    width: var(--card-w);
+    height: var(--card-h);
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: calc(25% - var(--card-border-offset));
+      left: calc(var(--card-border-offset) * -1);
+      width: var(--card-w);
+      height: var(--card-shape-h);
+      border: 1px solid $white;
+      background: transparent;
+      transform: skewY(var(--card-skew));
+      transform-origin: 0 0;
+      box-sizing: border-box;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 25%;
+      left: 0;
+      width: var(--card-w);
+      height: var(--card-shape-h);
+      background: linear-gradient(135deg, #F9D423 0%, #F18700 100%);
+      transform: skewY(var(--card-skew));
+      transform-origin: 0 0;
+      z-index: 1;
+    }
   }
 
   &__card-inner {
+    position: relative;
+    z-index: 2;
     display: flex;
     align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 0 2rem 0 2.4rem;
     gap: 1.2rem;
-    transform: skewX(12deg);
-    padding: 1.4rem 2rem;
-    min-height: 6.4rem;
   }
 
   &__card-icon {
@@ -904,28 +743,24 @@
     flex-shrink: 0;
     align-items: center;
     justify-content: center;
-    width: 4.8rem;
-    height: 4.8rem;
+    width: 35px;
+    height: 35px;
     background-color: $white;
     border-radius: 50%;
 
     img {
-      width: 3.2rem;
-      height: 3.2rem;
+      width:20px;
+      height:20px;
       object-fit: contain;
     }
   }
 
   &__card-text {
     color: $white;
-    font-size: 1.6rem;
+    font-size: 18px;
     font-weight: 700;
     line-height: 1.4;
-    letter-spacing: 0.04em;
-
-    @include md {
-      font-size: 1.4rem;
-    }
+    letter-spacing: 0;
   }
 }
 
@@ -1933,31 +1768,21 @@
   }
 
   &__icon {
-    position: relative;
+    display: block;
     flex-shrink: 0;
-    width: 1.2rem;
-    height: 1.2rem;
-
-    &::before,
-    &::after {
-      content: "";
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 1.2rem;
-      height: 2px;
-      background-color: $white;
-      transform: translate(-50%, -50%);
-      transition: transform 0.2s ease;
-    }
-
-    &::after {
-      transform: translate(-50%, -50%) rotate(90deg);
-    }
+    width: 0.9rem;
+    height: 0.9rem;
+    margin-top: -0.2rem;
+    border-right: 2px solid $white;
+    border-bottom: 2px solid $white;
+    transform: rotate(45deg);
+    transform-origin: center;
+    transition: transform 0.2s ease;
   }
 
-  &__item.is-open &__icon::after {
-    transform: translate(-50%, -50%) rotate(90deg) scaleX(0);
+  &__item.is-open &__icon {
+    margin-top: 0.2rem;
+    transform: rotate(-135deg);
   }
 
   &__answer {

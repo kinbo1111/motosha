@@ -13,6 +13,7 @@ html {
   scroll-padding-top: 10rem;
   font-size: 0.8333vw;
   font-size: clamp(6px, 0.8333vw, 10px);
+  background-color: $base;
 
   @include xl {
     font-size: 0.78125vw;
