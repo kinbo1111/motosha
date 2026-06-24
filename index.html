@@ -37,11 +37,31 @@
                     <li><a href="#contact">お問い合わせ</a></li>
                 </ul>
             </nav>
-            <a href="#" class="header__cta" target="_blank" rel="noopener noreferrer">
+            <a href="#" class="header__cta header__cta--pc" target="_blank" rel="noopener noreferrer">
                 LINE<span>で</span>無料相談<span>する</span>
             </a>
+            <button type="button" class="header__menu-btn" aria-expanded="false" aria-controls="header-drawer"
+                aria-label="メニューを開く">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </header>
+
+    <nav class="header__drawer" id="header-drawer" aria-label="モバイルナビゲーション" hidden>
+        <ul class="header__drawer-list">
+            <li><a href="#about">MOTO舎とは</a></li>
+            <li><a href="#facility">施設・設備</a></li>
+            <li><a href="#security">セキュリティ</a></li>
+            <li><a href="#price">料金</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#contact">お問い合わせ</a></li>
+        </ul>
+        <a href="#" class="header__cta" target="_blank" rel="noopener noreferrer">
+            LINE<span>で</span>無料相談<span>する</span>
+        </a>
+    </nav>
 
     <main>
         <section class="fv" aria-label="メインビジュアル">

@@ -1,21 +1,69 @@
 .header {
   position: absolute;
   top: 15px;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0;
+  right: 0;
+  margin: 0 auto;
   z-index: 100;
   max-width: 1150px;
   height: 80px;
-  width: 100%;
+  width: calc(100% - 30px);
   padding: 1rem 2.5rem;
   background-color: rgba($color: #0B0B0C, $alpha: 0.5);
   border-radius: 10px;
+
+  @include lg {
+    width: calc(100% - 24px);
+    height: auto;
+    min-height: 64px;
+    padding: 1rem 1.5rem;
+    top: 12px;
+  }
+
+  @include md {
+    min-height: 60px;
+    padding: 0.8rem 1.2rem;
+    border-radius: 8px;
+  }
+
+  @include sm {
+    width: calc(100% - 16px);
+    min-height: 56px;
+    padding: 0.7rem 1rem;
+    top: 10px;
+  }
+
+  @include xs {
+    width: calc(100% - 12px);
+    min-height: 52px;
+    padding: 0.6rem 0.8rem;
+    top: 8px;
+    border-radius: 6px;
+  }
 
   &__inner {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 2rem;
+
+    &.container {
+      max-width: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    @include lg {
+      gap: 1rem;
+    }
+
+    @include md {
+      gap: 0.8rem;
+    }
+
+    @include xs {
+      gap: 0.6rem;
+    }
   }
 
   &__logo {
@@ -27,8 +75,12 @@
       width: 20rem;
       height: auto;
 
+      @include lg {
+        width: 18rem;
+      }
+
       @include md {
-        width: 16rem;
+        width: 14rem;
       }
     }
   }
@@ -47,6 +99,10 @@
     justify-content: center;
     gap: 2rem;
 
+    @include xl {
+      gap: 1.5rem;
+    }
+
     a {
       color: $white;
       font-size: 15px;
@@ -55,17 +111,144 @@
       white-space: nowrap;
       transition: opacity 0.2s ease;
 
+      @include xl {
+        font-size: 14px;
+      }
+
       &:hover {
         opacity: 0.75;
       }
     }
   }
 
+  &__menu-btn {
+    display: none;
+    flex-shrink: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 44px;
+    height: 44px;
+    padding: 10px;
+
+    @include lg {
+      display: flex;
+    }
+
+    @include xs {
+      width: 36px;
+      height: 36px;
+      gap: 4px;
+      padding: 6px;
+    }
+
+    span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background-color: $white;
+      border-radius: 1px;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+
+      @include xs {
+        width: 18px;
+      }
+    }
+
+    &[aria-expanded="true"] {
+      span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+
+        @include xs {
+          transform: translateY(6px) rotate(45deg);
+        }
+      }
+
+      span:nth-child(2) {
+        opacity: 0;
+      }
+
+      span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+
+        @include xs {
+          transform: translateY(-6px) rotate(-45deg);
+        }
+      }
+    }
+  }
+
+  &__drawer {
+    position: fixed;
+    inset: 0;
+    z-index: 90;
+    padding: 9rem 2rem 2rem;
+    background-color: rgba(#0B0B0C, 0.97);
+    overflow-y: auto;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+
+    @include md {
+      padding-top: 8rem;
+      padding-inline: 1.5rem;
+    }
+
+    @include xs {
+      padding: 7.2rem 1.2rem 2rem;
+    }
+
+    &.is-open {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      height: fit-content;
+    }
+  }
+
+  &__drawer-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-bottom: 2rem;
+
+    @include xs {
+      margin-bottom: 1.6rem;
+    }
+
+    a {
+      display: block;
+      padding: 1.4rem 0;
+      border-bottom: 1px solid rgba($white, 0.12);
+      color: $white;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 1.4;
+      transition: opacity 0.2s ease;
+
+      @include xs {
+        padding: 1.2rem 0;
+        font-size: 15px;
+      }
+
+      &:hover {
+        opacity: 0.75;
+      }
+    }
+
+    li:last-child a {
+      border-bottom: none;
+    }
+  }
+
   &__cta {
     display: inline-flex;
-    align-items: center;
+    align-items: baseline;
     justify-content: center;
-    padding: 1.5rem 3rem;
+    width: 100%;
+    padding: 1.4rem 2rem;
     background-color: #06C755;
     border-radius: 15px;
     color: $white;
@@ -76,6 +259,12 @@
     white-space: nowrap;
     transition: opacity 0.2s ease, transform 0.2s ease;
 
+    @include xs {
+      padding: 1.2rem 1.6rem;
+      font-size: 16px;
+      border-radius: 12px;
+    }
+
     &:hover {
       opacity: 0.9;
       transform: translateY(-1px);
@@ -83,6 +272,29 @@
 
     span {
       font-size: 14px;
+
+      @include xs {
+        font-size: 13px;
+      }
+    }
+
+    &--pc {
+      width: auto;
+      flex-shrink: 0;
+      padding: 1.5rem 3rem;
+
+      @include xl {
+        padding: 1.2rem 2.4rem;
+        font-size: 16px;
+      }
+
+      @include lg {
+        display: none;
+      }
+
+      span {
+        font-size: 14px;
+      }
     }
   }
 }

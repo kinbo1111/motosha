@@ -51,6 +51,10 @@ body {
   color: $font_main;
   word-break: break-word;
 
+  &.is-menu-open {
+    overflow: hidden;
+  }
+
   @include sm {
     font-size: 14px;
   }

@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
       drawer.classList.remove('is-open');
       drawer.hidden = true;
       menuBtn.setAttribute('aria-label', 'メニューを開く');
+      document.body.classList.remove('is-menu-open');
     };
 
     const openDrawer = () => {
@@ -15,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
       drawer.classList.add('is-open');
       drawer.hidden = false;
       menuBtn.setAttribute('aria-label', 'メニューを閉じる');
+      document.body.classList.add('is-menu-open');
     };
 
     menuBtn.addEventListener('click', () => {
@@ -31,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     window.addEventListener('resize', () => {
-      if (window.innerWidth > 768) {
+      if (window.innerWidth > 1024) {
         closeDrawer();
       }
     });
