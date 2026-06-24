@@ -399,12 +399,13 @@ address {
   background-position: center;
   background-repeat: no-repeat;
   display: flex;
-  align-items: flex-end;
-  padding-bottom: 100px;
+  align-items: center;
 }
 @media (max-width: 768px) {
   .fv {
-    min-height: 60rem;
+    min-height: 580px;
+    align-items: flex-end;
+    padding-bottom: 64px;
   }
 }
 .fv__inner {
@@ -415,13 +416,11 @@ address {
   justify-content: space-between;
   gap: 4rem;
 }
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
   .fv__inner {
+    justify-content: flex-end;
     flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    gap: 4rem;
-    min-height: 60rem;
+    gap: 2rem;
   }
 }
 .fv__content {
@@ -449,6 +448,12 @@ address {
   clip-path: polygon(1% 0%, 100% 0%, 99% 100%, 0% 100%);
   z-index: -1;
 }
+@media (max-width: 768px) {
+  .fv__label {
+    font-size: 18px;
+    margin-bottom: 1.4rem;
+  }
+}
 .fv__title {
   margin-bottom: 1.4rem;
   font-family: "Noto Sans Javanese", sans-serif;
@@ -456,6 +461,16 @@ address {
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: 0;
+}
+@media (max-width: 768px) {
+  .fv__title {
+    font-size: 36px;
+  }
+}
+@media (max-width: 375px) {
+  .fv__title {
+    font-size: 32px;
+  }
 }
 .fv__desc {
   font-family: "Helvetica Neue";
@@ -470,10 +485,20 @@ address {
   gap: 3rem;
   flex-shrink: 0;
 }
+@media (max-width: 768px) {
+  .fv__features {
+    gap: 1.4rem;
+  }
+}
 .fv__feature {
   background-color: #fff;
   clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
   width: fit-content;
+}
+@media (max-width: 768px) {
+  .fv__feature {
+    clip-path: polygon(5% 0%, 100% 0%, 95% 100%, 0% 100%);
+  }
 }
 .fv__feature-inner {
   display: flex;
@@ -481,12 +506,27 @@ address {
   padding: 0.6rem 4.8rem;
   gap: 1rem;
 }
+@media (max-width: 768px) {
+  .fv__feature-inner {
+    padding: 0.6rem 2.4rem;
+  }
+}
 .fv__feature-check {
   flex-shrink: 0;
   color: #F18700;
   font-size: 40px;
   font-weight: 700;
   line-height: 1;
+}
+@media (max-width: 768px) {
+  .fv__feature-check {
+    font-size: 32px;
+  }
+}
+@media (max-width: 375px) {
+  .fv__feature-check {
+    font-size: 28px;
+  }
 }
 .fv__feature-text {
   color: #F18700;
@@ -500,6 +540,16 @@ address {
 .fv__feature-text span {
   font-size: 34px;
 }
+@media (max-width: 768px) {
+  .fv__feature-text span {
+    font-size: 28px;
+  }
+}
+@media (max-width: 768px) {
+  .fv__feature-text {
+    font-size: 20px;
+  }
+}
 
 .cta-band {
   position: relative;
@@ -509,10 +559,16 @@ address {
   align-items: center;
   justify-content: center;
 }
+@media (max-width: 768px) {
+  .cta-band {
+    min-height: 300px;
+  }
+}
 .cta-band::after {
   content: "";
   position: absolute;
-  top: 0;
+  top: 50%;
+  transform: translateY(-50%);
   left: 0;
   width: 100%;
   height: 250px;
@@ -533,6 +589,16 @@ address {
   width: 34rem;
   height: auto;
   object-fit: contain;
+}
+@media (max-width: 768px) {
+  .cta-band__bike img {
+    width: 20rem;
+  }
+}
+@media (max-width: 375px) {
+  .cta-band__bike img {
+    width: 14rem;
+  }
 }
 .cta-band__bike--left {
   position: absolute;
@@ -563,6 +629,16 @@ address {
   letter-spacing: 0;
   color: #151619;
 }
+@media (max-width: 768px) {
+  .cta-band__title {
+    font-size: 20px;
+  }
+}
+@media (max-width: 375px) {
+  .cta-band__title {
+    font-size: 19px;
+  }
+}
 .cta-band__title-slash {
   color: #fff;
   font-weight: 700;
@@ -585,7 +661,8 @@ address {
   align-items: center;
   justify-content: center;
   gap: 0.2rem;
-  min-width: 40rem;
+  max-width: 40rem;
+  width: 100%;
   height: 57px;
   background-color: #06C755;
   border-radius: 15px;
@@ -642,7 +719,7 @@ address {
   z-index: 1;
 }
 .concern__heading {
-  margin-bottom: 5rem;
+  margin-bottom: 2rem;
   color: #fff;
   font-size: 34px;
   font-weight: 700;
@@ -650,6 +727,11 @@ address {
   text-align: center;
   letter-spacing: 0;
   font-family: "Noto Sans Javanese", sans-serif;
+}
+@media (max-width: 768px) {
+  .concern__heading {
+    font-size: 28px;
+  }
 }
 .concern__accent {
   color: #F18700;
@@ -663,12 +745,12 @@ address {
   grid-template-columns: repeat(3, 1fr);
   margin-bottom: 6rem;
 }
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
   .concern__grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-@media (max-width: 576px) {
+@media (max-width: 375px) {
   .concern__grid {
     grid-template-columns: 1fr;
   }
@@ -682,7 +764,7 @@ address {
 @media (max-width: 768px) {
   .concern__item {
     gap: 1.6rem;
-    padding: 2.4rem 1.6rem;
+    padding: 1.2rem 4rem;
   }
 }
 .concern__icon {
@@ -714,6 +796,11 @@ address {
   letter-spacing: 0;
   font-family: "Noto Sans Javanese", sans-serif;
 }
+@media (max-width: 768px) {
+  .concern__solution {
+    font-size: 28px;
+  }
+}
 .concern__exclaim {
   font-size: 40px;
   font-style: italic;
@@ -734,11 +821,6 @@ address {
 @media (max-width: 768px) {
   .concern__concepts {
     grid-template-columns: repeat(2, 1fr);
-  }
-}
-@media (max-width: 375px) {
-  .concern__concepts {
-    grid-template-columns: 1fr;
   }
 }
 .concern__concept {
@@ -770,6 +852,11 @@ address {
   text-align: center;
   letter-spacing: 0;
 }
+@media (max-width: 768px) {
+  .concern__concept-label {
+    font-size: 16px;
+  }
+}
 
 .protect {
   position: relative;
@@ -792,6 +879,11 @@ address {
   font-weight: 700;
   line-height: 2;
   letter-spacing: 0;
+}
+@media (max-width: 768px) {
+  .protect__title {
+    font-size: 24px;
+  }
 }
 .protect__title-accent {
   position: relative;
@@ -837,6 +929,11 @@ address {
   gap: 1.6rem;
   margin: 0 auto 2.4rem auto;
 }
+@media (max-width: 768px) {
+  .protect__compare {
+    flex-direction: column;
+  }
+}
 .protect__panel {
   flex: 1;
   max-width: 400px;
@@ -852,6 +949,11 @@ address {
   text-align: center;
   letter-spacing: 0;
 }
+@media (max-width: 768px) {
+  .protect__panel-head {
+    font-size: 20px;
+  }
+}
 .protect__panel-foot {
   padding: 1.2rem 2rem;
   color: #fff;
@@ -860,6 +962,11 @@ address {
   line-height: 1.3;
   text-align: center;
   letter-spacing: 0;
+}
+@media (max-width: 768px) {
+  .protect__panel-foot {
+    font-size: 18px;
+  }
 }
 .protect__panel--home .protect__panel-head {
   background-color: #585858;
@@ -910,6 +1017,11 @@ address {
   line-height: 1.3;
   letter-spacing: 0;
 }
+@media (max-width: 768px) {
+  .protect__row-title {
+    font-size: 18px;
+  }
+}
 .protect__row-title--accent {
   color: #F18700;
 }
@@ -932,6 +1044,13 @@ address {
   clip-path: polygon(0% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%);
   background: linear-gradient(to left, #F18700, #F9D423);
   margin: 0 auto;
+}
+@media (max-width: 768px) {
+  .protect__arrow {
+    transform: rotate(90deg);
+    width: 50px;
+    height: 40px;
+  }
 }
 .protect__disclaimer {
   color: white;
@@ -998,8 +1117,15 @@ address {
   padding: 4px 4px 4px 0;
   gap: 1.5rem;
 }
+@media (max-width: 768px) {
+  .service__cards {
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+}
 .service__card {
-  --card-w: 248px;
+  --card-w: 254px;
   --card-h: 94px;
   --card-skew: -5.42deg;
   --card-shape-h: 70.5px;
@@ -1100,24 +1226,30 @@ address {
 }
 .strength__cards {
   display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
   gap: 1.2rem;
+  row-gap: 2rem;
   margin-top: 3rem;
   padding: 5rem 0;
   list-style: none;
 }
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
   .strength__cards {
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    padding-bottom: 1rem;
-    -webkit-overflow-scrolling: touch;
+    row-gap: 3.6rem;
   }
 }
 .strength__card {
   position: relative;
-  flex: 1;
   width: 212px;
   height: 355px;
+}
+@media (max-width: 576px) {
+  .strength__card {
+    width: 48%;
+    height: 330px;
+  }
 }
 .strength__num {
   position: absolute;
@@ -1142,7 +1274,6 @@ address {
 }
 .strength__media img {
   width: 100%;
-  height: 140px;
   object-fit: contain;
 }
 .strength__card-title {
@@ -1153,6 +1284,11 @@ address {
   line-height: 1.3;
   letter-spacing: 0;
 }
+@media (max-width: 576px) {
+  .strength__card-title {
+    font-size: 16px;
+  }
+}
 .strength__card-text {
   padding: 0 0.6rem;
   color: #fff;
@@ -1161,6 +1297,11 @@ address {
   line-height: 1.5;
   letter-spacing: 0;
 }
+@media (max-width: 576px) {
+  .strength__card-text {
+    font-size: 14px;
+  }
+}
 .strength__choose {
   padding: 6.5rem 0;
   background-color: #151619;
@@ -1168,6 +1309,11 @@ address {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+}
+@media (max-width: 375px) {
+  .strength__choose {
+    padding: 3.6rem 0;
+  }
 }
 .strength__choose-heading {
   position: relative;
@@ -1189,6 +1335,11 @@ address {
   height: 5px;
   background-color: #F18700;
   clip-path: polygon(1% 0%, 100% 0%, 99% 100%, 0% 100%);
+}
+@media (max-width: 768px) {
+  .strength__choose-heading {
+    font-size: 20px;
+  }
 }
 .strength__choose-accent {
   color: #F18700;
@@ -1220,7 +1371,7 @@ address {
 }
 .strength__choose-media img {
   width: 100%;
-  height: 180px;
+  height: auto;
   object-fit: contain;
 }
 .strength__choose-body {
@@ -1235,6 +1386,11 @@ address {
   letter-spacing: 0;
   min-height: 44px;
 }
+@media (max-width: 768px) {
+  .strength__choose-title {
+    min-height: unset;
+  }
+}
 .strength__choose-text {
   color: #151619;
   font-size: 16px;
@@ -1245,6 +1401,11 @@ address {
 .strength__compare {
   padding: 5rem 0;
   background-color: #151619;
+}
+@media (max-width: 768px) {
+  .strength__compare {
+    padding: 3rem 0;
+  }
 }
 .strength__compare-heading {
   position: relative;
@@ -1372,6 +1533,7 @@ address {
 @media (max-width: 1024px) {
   .price__plans {
     grid-template-columns: 1fr;
+    gap: 2rem;
   }
 }
 .price__plan-label {
@@ -1481,6 +1643,14 @@ address {
   padding: 3rem 4.5rem;
   background-color: rgba(255, 255, 255, 0.2);
 }
+@media (max-width: 768px) {
+  .price__option-row {
+    justify-content: center;
+    flex-direction: column;
+    padding: 1.4rem 1.6rem;
+    gap: 1rem;
+  }
+}
 .price__option-name {
   max-width: 183px;
   font-size: 18px;
@@ -1488,6 +1658,12 @@ address {
   letter-spacing: 0;
   line-height: 1.2;
   color: white;
+}
+@media (max-width: 768px) {
+  .price__option-name {
+    max-width: unset;
+    font-size: 17px;
+  }
 }
 .price__option-price {
   display: flex;
@@ -1558,6 +1734,11 @@ address {
 }
 .price__provide-heading span {
   font-size: 28px;
+}
+@media (max-width: 768px) {
+  .price__provide-heading span {
+    font-size: 26px;
+  }
 }
 .price__provide-accent {
   color: #F18700;
@@ -1630,6 +1811,12 @@ address {
   height: 105px;
   object-fit: contain;
 }
+@media (max-width: 768px) {
+  .price__provide-icon img {
+    width: 75px;
+    height: 75px;
+  }
+}
 .price__provide-card-title {
   margin-bottom: 1rem;
   color: #F18700;
@@ -1666,7 +1853,8 @@ address {
 @media (max-width: 768px) {
   .price__provide-banner-inner {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    justify-content: center;
     padding: 2rem;
   }
 }
@@ -1715,6 +1903,11 @@ address {
   width: fit-content;
   padding-bottom: 0.8rem;
 }
+@media (max-width: 768px) {
+  .price__steps-heading {
+    font-size: 20px;
+  }
+}
 .price__steps-heading span {
   color: #F18700;
 }
@@ -1732,9 +1925,16 @@ address {
   font-size: 48px;
   line-height: 1;
 }
+@media (max-width: 768px) {
+  .price__steps-heading-num {
+    font-size: 36px;
+  }
+}
 .price__steps {
   display: flex;
   align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
   gap: 2.4rem;
   margin: 0;
   padding: 0;
@@ -1742,8 +1942,6 @@ address {
 }
 .price__step {
   position: relative;
-  flex: 1;
-  min-width: 0;
 }
 .price__step-label {
   position: absolute;
@@ -1763,8 +1961,18 @@ address {
   letter-spacing: 0;
   color: #F18700;
 }
+@media (max-width: 768px) {
+  .price__step-label {
+    font-size: 20px;
+  }
+}
 .price__step-label-num {
   font-size: 69px;
+}
+@media (max-width: 768px) {
+  .price__step-label-num {
+    font-size: 48px;
+  }
 }
 .price__step-box {
   display: flex;
@@ -1773,6 +1981,11 @@ address {
   padding: 3.5rem 2.3rem;
   border: 1px solid #fff;
   min-height: 180px;
+}
+@media (max-width: 768px) {
+  .price__step-box {
+    padding: 3rem 1.6rem;
+  }
 }
 .price__step-icon {
   display: flex;
@@ -1804,6 +2017,11 @@ address {
   line-height: 1.7;
   letter-spacing: 2%;
 }
+@media (max-width: 768px) {
+  .price__step-text {
+    font-size: 15px;
+  }
+}
 .price__arrow {
   width: 20px;
   height: 34px;
@@ -1812,6 +2030,11 @@ address {
   width: 100%;
   height: 100%;
   object-fit: contain;
+}
+@media (max-width: 768px) {
+  .price__arrow {
+    transform: rotate(90deg);
+  }
 }
 
 .faq {
