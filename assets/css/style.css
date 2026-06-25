@@ -957,6 +957,12 @@ address {
   letter-spacing: 0;
   text-align: center;
 }
+.protect__lead .bold {
+  font-weight: 700;
+}
+.protect__lead .star {
+  font-size: 10px;
+}
 .protect__highlight {
   color: #F18700;
   font-weight: 700;
@@ -971,7 +977,7 @@ address {
   max-width: 900px;
   width: 100%;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   gap: 1.6rem;
   margin: 0 auto 2.4rem auto;
@@ -1095,7 +1101,7 @@ address {
   height: 50px;
   clip-path: polygon(0% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%);
   background: linear-gradient(to left, #F18700, #F9D423);
-  margin: 0 auto;
+  margin: auto;
 }
 @media (max-width: 768px) {
   .protect__arrow {
@@ -1108,7 +1114,8 @@ address {
   color: white;
   font-size: 12px;
   line-height: 1.7;
-  text-align: right;
+  text-align: left;
+  margin-top: 10px;
 }
 
 .service {
@@ -1220,9 +1227,10 @@ address {
   z-index: 2;
   display: flex;
   align-items: center;
+  justify-content: center;
   width: 100%;
   height: 100%;
-  padding: 0 2rem 0 2.4rem;
+  padding: 0 2.4rem 0 2rem;
   gap: 1.2rem;
 }
 .service__card-icon {
@@ -1731,6 +1739,9 @@ address {
     font-size: 17px;
   }
 }
+.price__option-name span {
+  font-size: 10px;
+}
 .price__option-price {
   display: flex;
   align-items: flex-end;
@@ -1766,6 +1777,9 @@ address {
 }
 .price__provide-note {
   position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 4px;
   margin-bottom: 4rem;
   padding-bottom: 1rem;
   color: #fff;
@@ -1791,6 +1805,9 @@ address {
   transform: scaleX(0);
   transform-origin: left center;
   transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.price__provide-note span {
+  font-size: 10px;
 }
 .price__provide-heading {
   margin-bottom: 0.4rem;
